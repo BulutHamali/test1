@@ -2,18 +2,21 @@
 
 ## Code (left panel in VS Code / GitHub)
 ```mermaid
-flowchart LR
+flowchart TD
   subgraph Data["Data Layer"]
-    A[Raw Data] --> B[Preprocessing]
-    B --> C[Feature Engineering]
+    A[Raw Data]
+    B[Preprocessing]
+    C[Feature Engineering]
   end
 
   subgraph Modeling["Modeling Layer"]
-    C --> D[Model Training]
-    D --> E[Evaluation]
+    D[Model Training]
+    E[Evaluation]
   end
 
   subgraph Serving["Serving Layer"]
-    E --> F[Deployment]
-    F --> G[Monitoring]
+    F[Deployment]
+    G[Monitoring]
   end
+
+  A --> B --> C --> D --> E --> F --> G
